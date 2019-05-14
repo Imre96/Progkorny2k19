@@ -43,7 +43,7 @@ public class Fibonacci_impl implements Fibonacci {
 		lost = false;
 	}
 	/**
-	 * Rotates the Ma matrix clockwise No times;
+	 * Rotates the Ma matrix clockwise No times.
 	 * @param Ma The Matrix to be rotated.
 	 * @param No The number of times that it needs to be rotated.
 	 * @return The rotated matrix.
@@ -65,7 +65,7 @@ public class Fibonacci_impl implements Fibonacci {
 		return Ma;
 	}
 	/**
-	 * Ads filler 0s to the List to the indicated size;
+	 * Ads filler 0s to the List to the indicated size.
 	 * @param line The list to be lengthened.
 	 * @param s the desired list length.
 	 */
@@ -75,7 +75,7 @@ public class Fibonacci_impl implements Fibonacci {
 	 }
 	}
 	/**
-	 *Pushes all valid value to the right side of the matrix 
+	 *Pushes all valid value to the right side of the matrix. 
 	 * @param Mat The matrix to be modified.
 	 * @return The matrix with all non0 values on the right side
 	 */
@@ -96,7 +96,7 @@ public class Fibonacci_impl implements Fibonacci {
 		return temp;
 	}
 	/**
-	 * Check if 2 cells can be merged
+	 * Check if 2 cells can be merged.
 	 * @param a the value of one cell.
 	 * @param b The value of the other cell.
 	 * @return true if can merge, false if not.
@@ -180,7 +180,7 @@ public class Fibonacci_impl implements Fibonacci {
 		
 	}
 	/**
-	 * Executes Cell-moving and merging transformations
+	 * Executes Cell-moving and merging transformations.
 	 * @param Mat The Matrix representing the current game-state
 	 * @return The altered Matrix
 	 */
@@ -201,7 +201,9 @@ public class Fibonacci_impl implements Fibonacci {
 					won=true;
 			}
 	}
-	
+	/**
+	 * Implementation of the Right Game move.
+	 */
 	public void rightMove() {
 		
 		int tmp[][]=fields;
@@ -214,7 +216,10 @@ public class Fibonacci_impl implements Fibonacci {
 		fields=tmp;
 		checkstate();
 	}
-
+	
+	/**
+	 * Implementation of the Left Game move.
+	 */
 	public void leftMove() {
 		int tmp[][]=fields;
 		if(tmp!=MoveTrasformations(tmp)) {
@@ -224,7 +229,9 @@ public class Fibonacci_impl implements Fibonacci {
 		fields=tmp;
 		checkstate();
 	}
-
+	/**
+	 * Implementation of the up Game move.
+	 */
 	public void upMove() {
 		int tmp[][]=fields;
 		tmp=RotateMatrix(tmp,1);
@@ -236,7 +243,9 @@ public class Fibonacci_impl implements Fibonacci {
 		fields=tmp;
 		checkstate();
 	}
-
+	/**
+	 * Implementation of the Down Game move.
+	 */
 	public void downMove() {
 		int tmp[][]=fields;
 		tmp=RotateMatrix(tmp,3);
@@ -248,15 +257,26 @@ public class Fibonacci_impl implements Fibonacci {
 		fields=tmp;
 		checkstate();
 	}
-
+	/**
+	 * Return the indicated cell value.
+	 * @param i row number
+	 * @param j Colum number
+	 * @return Value of the indicated Cell
+	 */
 	public int getCell(int i, int j) {
 		return fields[i][j];
 	}
-
+	/**
+	 * Returns true if victory contidion have been met.
+	 * @return True/false
+	 */
 	public boolean getwin() {
 		return won;
 	}
-	
+	/**
+	 * Returns true if the game has been lost.
+	 * @return true/false
+	 */
 	public boolean getLose() {
 		return lost;
 	}

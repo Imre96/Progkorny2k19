@@ -1,6 +1,6 @@
 package model;
 /**
- * Interface for the 2048 Fibonacci game 20
+ * Interface for the 2048 Fibonacci game.
  * @author Szabo Imre
  *
  */

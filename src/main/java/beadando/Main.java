@@ -8,13 +8,13 @@ import javafx.stage.Stage;
 import org.pmw.tinylog.Logger;
 
 /**
- * Main Class, extends Application
+ * Main Class, extends Application.
  * @author Szabó Imre
  *
  */
 public class Main extends Application {
 	/**
-	 * main method of the application
+	 * Main method of the application.
 	 * @param args command line arguments
 	 */	
 	public static void main(String[] args)  {
