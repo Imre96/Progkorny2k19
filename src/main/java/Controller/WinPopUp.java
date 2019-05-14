@@ -2,6 +2,8 @@ package Controller;
 
 import javafx.event.ActionEvent;
 import java.awt.event.InputEvent;
+import org.pmw.tinylog.Logger;
+
 
 import org.pmw.tinylog.Logger;
 
