@@ -4,7 +4,7 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="61.0" prefWidth="459.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.WinPopUp">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="61.0" prefWidth="459.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.WinPopUp">
    <children>
       <Label alignment="CENTER" text="Gratulálok, Nyertél! Szeretnéd folytatni vagy újrakezdeni?" />
       <HBox prefHeight="100.0" prefWidth="200.0">

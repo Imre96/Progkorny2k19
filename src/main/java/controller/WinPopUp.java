@@ -1,4 +1,4 @@
-package Controller;
+package controller;
 
 import javafx.event.ActionEvent;
 import java.awt.event.InputEvent;

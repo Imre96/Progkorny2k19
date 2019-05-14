@@ -1,25 +1,30 @@
-package Model;
+package model;
 
-import javafx.beans.property.SimpleStringProperty;
 import java.util.LinkedList;
 
-
-public class fibonacci_impl implements Fibonacci {
+/**
+ * Implementation of Fibonacci Interface. Contains the Logic of the game.
+ * @author szabo
+ *
+ */
+public class Fibonacci_impl implements Fibonacci {
 	/**
 	 * represents the cells of the gameboard.
 	 */
-	int fields[][];
+	public int fields[][];
 	/**
 	 * Has the victory condition been met?
 	 */
-	boolean won =false;
+	private boolean won = false;
 	/**
 	 * Has the game been lost?
 	 */
-	boolean lost =false;
-	
-	public void newGame() {
-		fields =  new int[4][4];
+	private boolean lost = false;
+	/**
+	 * Implements The interface's NewGame() method.
+	 */
+	public final void newGame() {
+		fields = new int[4][4];
 		for(int i =0; i<4; i++)
 			for(int j=0; j<4; j++) {
 				fields[i][j]=0;
@@ -32,8 +37,8 @@ public class fibonacci_impl implements Fibonacci {
 			secondX=(int)(Math.random()*4);
 			secondY=(int)(Math.random()*4);
 		}while((firstX==secondX) && (firstY==secondY));
-		fields[firstX][firstY]=1;
 		fields[secondX][secondY]=1;
+		fields[firstX][firstY]=1;
 		won=false;
 		lost = false;
 	}
@@ -46,17 +51,17 @@ public class fibonacci_impl implements Fibonacci {
 	private int[][] RotateMatrix(int[][]Ma, int No){
 
 		for	(int n=0; n<No; n++)
-	    for (int x = 0; x <  2; x++) 
-	    { 
-	        for (int y = x; y < 4-x-1; y++) 
-	        { 
-	            int temp = Ma[x][y]; 
-	            Ma[x][y] = Ma[y][3-x];
-	            Ma[y][3-x] = Ma[3-x][3-y]; 
-	            Ma[3-x][3-y] = Ma[3-y][x]; 	  
-	            Ma[3-y][x] = temp; 
-	        }
-	    }
+	 for (int x = 0; x < 2; x++) 
+	 { 
+		 for (int y = x; y < 4-x-1; y++) 
+		 	{ 
+			 	int temp = Ma[x][y]; 
+			 	Ma[x][y] = Ma[y][3-x];
+			 	Ma[y][3-x] = Ma[3-x][3-y]; 
+			 	Ma[3-x][3-y] = Ma[3-y][x]; 	 
+			 	Ma[3-y][x] = temp; 
+		 	}
+	 }
 		return Ma;
 	}
 	/**
@@ -65,9 +70,9 @@ public class fibonacci_impl implements Fibonacci {
 	 * @param s the desired list length.
 	 */
 	private static void FillUpLine(LinkedList<Integer> line, int s) {
-	    while (line.size() != s) {
-	      line.addLast(0);
-	    }
+		while (line.size() != s) {
+			line.addLast(0);
+	 }
 	}
 	/**
 	 *Pushes all valid value to the right side of the matrix 
@@ -99,42 +104,15 @@ public class fibonacci_impl implements Fibonacci {
 	private boolean CanMerge(int a, int b) {
 		if(a*b==0)
 			return false;
-		if(a*b==1)
+		else if(a*b==1)
 			return true;
-		if(a==b)
+		else if(a==b)
 			return false;
-		if(Math.abs(a-b)==1)
+		else if(Math.abs(a-b)==1)
 			return true;
+		else
 		return false;
 	}
-	/*
-	private int[][] MergeFieldsDep(int Mat[][]){
-		int temp[][]=new int[4][4];
-		for(int i=0; i<4 ; i++) {
-			LinkedList<Integer> line = new LinkedList<Integer>();
-			for	(int j=0; j<3; j++) {
-				if(Mat[i][j]!=0)
-				if(Mat[i][j]==1 && Mat[i][j+1]==1){
-					line.addLast(2);
-					Mat[i][j]=0;
-					Mat[j][j+1]=0;
-				}else if((Mat[i][j]==Mat[i][j+1]-1) || (Mat[i][j]==Mat[i][j+1]+1) && Mat[i][j]*Mat[i][j+1]!=0){
-					line.addLast(Math.max(Mat[i][j],Mat[j][j+1])+1);;
-					Mat[i][j]=0;
-					Mat[j][j+1]=0;
-					}
-				else if(Mat[i][j]!=0){
-					line.addLast(Mat[i][j]);
-				}
-			}
-			FillUpLine(line, 4);
-			for (int j = 0; j < line.size(); j++) {
-				temp[i][j] = line.removeFirst();
-			}
-		}		
-		return temp;
-	}
-*/	
 	/**
 	 * MErges the fields.
 	 * @param Mat The Matrix to be transformed.
@@ -187,14 +165,14 @@ public class fibonacci_impl implements Fibonacci {
 				if(Mat[i][j]==0)
 					vanures=true;
 		if(vanures) {
-		int newX;
-		int newY;
-		do {
-			newX=(int)(Math.random()*4);
-			newY=(int)(Math.random()*4);
-		}while(Mat[newX][newY]!=0);
-		Mat[newX][newY]=1;
-		return Mat;
+			int newX;
+			int newY;
+			do {
+				newX=(int)(Math.random()*4);
+				newY=(int)(Math.random()*4);
+			}while(Mat[newX][newY]!=0);
+				Mat[newX][newY]=1;
+				return Mat;
 		}else {
 			lost=true;
 			return Mat;

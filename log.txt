@@ -1,8 +1,8 @@
-2019-05-14 18:42:14 [main] Model.FibonacciTest.MergeTest()
+2019-05-14 19:42:15 [main] Model.FibonacciTest.MergeTest()
 WARNING: wrong number of arguments
-2019-05-14 18:42:14 [main] Model.FibonacciTest.MergeTest()
+2019-05-14 19:42:15 [main] Model.FibonacciTest.MergeTest()
 WARNING: java.lang.IllegalArgumentException: wrong number of arguments
-2019-05-14 18:42:14 [main] Model.FibonacciTest.StateTest()
+2019-05-14 19:42:15 [main] Model.FibonacciTest.StateTest()
 WARNING: wrong number of arguments
-2019-05-14 18:42:14 [main] Model.FibonacciTest.StateTest()
+2019-05-14 19:42:15 [main] Model.FibonacciTest.StateTest()
 WARNING: java.lang.IllegalArgumentException: wrong number of arguments

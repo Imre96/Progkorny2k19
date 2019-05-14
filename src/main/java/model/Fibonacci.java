@@ -1,4 +1,4 @@
-package Model;
+package model;
 /**
  * Interface for the 2048 Fibonacci game 20
  * @author Szabo Imre
@@ -6,27 +6,27 @@ package Model;
  */
 public interface Fibonacci {
 	/**
-	 * Sets the game to the start state;
+	 * Sets the game to the start state.
 	 */
 	void newGame();
 	/**
-	 * executes move to the Right direction
+	 * executes move to the Right direction.
 	 */
 	void rightMove();
 	/**
-	 * executes move to the left direction
+	 * executes move to the left direction.
 	 */
 	void leftMove();
 	/**
-	 * executes move to the up direction
+	 * executes move to the up direction.
 	 */
 	void upMove();
 	/**
-	 * executes move to the down direction
+	 * executes move to the down direction.
 	 */
 	void downMove();
 	/**
-	 * returns the value of the indicated cell
+	 * Returns the value of the indicated cell.
 	 * @param i the x parameter [0,3]
 	 * @param j the y parameter [0,3]
 	 * @return the value of the cell
@@ -42,5 +42,4 @@ public interface Fibonacci {
 	 * @return true if the game is lost, false otherwise;
 	 */
 	boolean getLose();
-	
 }

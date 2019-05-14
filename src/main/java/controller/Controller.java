@@ -1,24 +1,18 @@
-package Controller;
+package controller;
 
-import Model.Fibonacci;
-import Model.fibonacci_impl;
 import javafx.beans.property.StringProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.scene.control.Label;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.stage.Stage;
-import javafx.stage.Modality;
-import Controller.WinPopUp;
-import Controller.LosePopUp;
+import model.Fibonacci;
+import model.Fibonacci_impl;
+
 import org.pmw.tinylog.Logger;
 
 
 public class Controller {
-	Fibonacci Game = new fibonacci_impl();
+	Fibonacci Game = new Fibonacci_impl();
 	StringProperty feliratok[][] = new SimpleStringProperty[4][4]; 
-	boolean alreadywon=false;
+	boolean alreadywon = false;
 	WinPopUp az = new WinPopUp();;
 	
 	//@FXML
@@ -117,15 +111,15 @@ public class Controller {
 		return color;
 	}
 	
-	private int fibonacci(int n)  {
-	    if(n == 0)
-	        return 0;
-	    else if(n == 1)
-	      return 1;
-	   else if(n==2)
-		   return 2;
-	   else
-	      return fibonacci(n - 1) + fibonacci(n - 2);
+	private int fibonacci(int n) {
+	 if(n == 0)
+		 return 0;
+	 else if(n == 1)
+		 return 1;
+	 else if(n==2)
+		 return 2;
+	 else
+		 return fibonacci(n - 1) + fibonacci(n - 2);
 	}
 	
 	private void checkgamestate() {

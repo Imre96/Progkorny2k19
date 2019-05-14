@@ -7,10 +7,10 @@ import java.lang.reflect.Method;
 import org.junit.Test;
 import org.pmw.tinylog.Logger;
 
-import Model.fibonacci_impl;
+import model.Fibonacci_impl;
 public class FibonacciTest {
 	
-	fibonacci_impl Game = new fibonacci_impl();
+	Fibonacci_impl Game = new Fibonacci_impl();
 	
 	@Test
 	public void test() {
@@ -42,7 +42,7 @@ public class FibonacciTest {
 	
 	void MergeTest() {
 		try {
-		Method method = fibonacci_impl.class.getDeclaredMethod("MergeFields", int[][].class);
+		Method method = Fibonacci_impl.class.getDeclaredMethod("MergeFields", int[][].class);
 		method.setAccessible(true);
 		int[][] testsor= {{1,1,2,2},{1,2,1,1},{0,1,1,0},{0,0,1,1}};
 		int[][] testedmatrix = (int[][]) method.invoke(Game, testsor);
@@ -65,11 +65,11 @@ public class FibonacciTest {
 	 	assertTrue(!Game.getwin());
 	 	Game.fields[0][0]=12;
 	 	try {
-		Method method = fibonacci_impl.class.getDeclaredMethod("checkstate");
+		Method method = Fibonacci_impl.class.getDeclaredMethod("checkstate");
 		method.setAccessible(true);
 		method.invoke(Game);
 	 	assertTrue(Game.getwin());
-		Method putnew = fibonacci_impl.class.getDeclaredMethod("PutNew",int[][].class);
+		Method putnew = Fibonacci_impl.class.getDeclaredMethod("PutNew",int[][].class);
 		int[][] fullmatrix = {{1,1,1,1},{1,1,1,1},{1,1,1,1},{1,1,1,1}};
 		int[][] fullmatrix2 = {{1,1,0,1},{1,1,0,1},{1,1,0,1},{1,1,0,1}};
 		putnew.setAccessible(true);
